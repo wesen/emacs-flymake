@@ -1323,6 +1323,7 @@ For the format of LINE-ERR-INFO, see `flymake-ler-make-ler'."
          (line-err-info-list  (nth 0 (flymake-find-err-info flymake-err-info line-no)))
          (menu-data           (flymake-make-err-menu-data line-no line-err-info-list))
          (choice              nil))
+    (message (format "Flymake: %s" (flymake-ler-text (first line-err-info-list))))
     (if menu-data
         (progn
           (setq choice (flymake-popup-menu menu-data))
